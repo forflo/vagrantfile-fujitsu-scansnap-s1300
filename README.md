@@ -1,11 +1,15 @@
 # Vagrantfile for bringing your old ScanSnap S1300 (not s1300i) back to life.
 
-TL;DR: Fujitsu discontinued software support for Mac OS X. Starting with
+## TL;DR: 
+
+Fujitsu discontinued software support for Mac OS X. Starting with
 OS X Catalina, ScanSnap Manager ceases to work on OS X. The Vagrantfile
 in this repository automatically creates a environment that you can use
 to continue scanning with your `Fujitsu ScanSnap S1300`!
 **Don't buy a new scanner just because FUJITSU discontinued
-their support for that product line**
+their support for that product line!**
+
+## A motivating pile of letters
 
 A couple of days ago I went to my mailbox and fetched another
 pile of letters, bills, and documents. I did what I'd usually do, that is
@@ -20,6 +24,8 @@ the issue.
 I picked up my Fujitsu ScanSnap S1300 and hooked it up
 to my computer, a MacBook Air which already had the
 drivers and otherwise needed tools installed.
+
+## A dragon emerges
 
 I fired up that ScanSnap Manager program in order to scan something,
 but much to my bad surprise, I was greeted with a frienly message
@@ -47,11 +53,15 @@ and this screenshot
 
 proves.
 
+## Rage
+
 The feelings of doubt that had previously emerged from my gut
 immediately turned into blind rage. I slammed shut my laptop
 and went outside to vent my frustation by way of 10k running, but although
 that might've been enough to release my anger, I could not find
 the motivation to deal with that issue for another 3 weeks. 
+
+## Coping
 
 Germany is in lock-down since the Coronavirus (COVID-19) is
 currently shaking the world. With this repository 
@@ -63,7 +73,7 @@ their support for that product line**
 
 **Don't let them win**
 
-## Solution
+### Solution
 
 - Clone this repository
 - Open a Terminal and use `cd` to change into it.
@@ -72,7 +82,7 @@ their support for that product line**
 - Run `vagrant ssh "scanimage -p --format=png > /vagrant/out.png"`
 - Thank me later
 
-## Acknowledgements
+### Acknowledgements
 
 I could not have thrown together this repository if it had not been
 for these folks:
