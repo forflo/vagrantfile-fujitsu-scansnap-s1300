@@ -89,8 +89,8 @@ their support for that product line**
 
 ### Acknowledgements
 
-I could not have thrown together this repository if it had not been
-for these folks:
+I could not have thrown together this repository in less
+than 2 hours if it had not been for these folks:
 
 - [Josh Archer](https://www.josharcher.uk/code/install-scansnap-s1300-drivers-linux/)
 - [Leo Gaggl](https://www.gaggl.com/2016/11/getting-fujitsu-scansnap-s1300i-to-work-on-ubuntu-16-04lts/)
