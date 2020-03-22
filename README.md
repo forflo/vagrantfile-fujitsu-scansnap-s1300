@@ -5,15 +5,12 @@ OS X Catalina, ScanSnap Manager ceases to work on OS X. The Vagrantfile
 in this repository automatically creates a environment that you can use
 to continue scanning with your `Fujitsu ScanSnap S1300`!
 
-
 A couple of days ago I went to my mailbox and fetched another
 pile of letters, bills, and documents. I did what I'd usually do, that is
 I threw them onto an ever growing pile of non-digitalized
 documents just begging to be transferred into the matrix...
 
-My conscience worsened as I saw that huge stack of paper.
-
-I had to do something...
+My conscience worsened as I saw that huge stack of paper. I had to do something...
 
 Few days went past, before I finally had the courage to tacke
 the issue.
@@ -40,9 +37,7 @@ some extras, that's why it only differs in the i", I thought. And further:
 "It gotta work, the good folks from Fujitsu will have let all users
 of that product line down, locking them to old versions of OS X!".
 
-I was wrong.
-
-Sadly, this was exactly what had happened as following 
+I was wrong. Sadly, this was exactly what had happened as following 
 [webpage](https://www.fujitsu.com/global/support/products/computing/peripheral/scanners/scansnap/faq/s1300-catalina.html) 
 and this screenshot
 
@@ -50,16 +45,15 @@ and this screenshot
 
 proves.
 
-The feelings of doubt that had previously emerged from my gu
-immediately turned into blind rage. I slammed down my computer
-and went to vent my frustation by way of 10k running, but although
+The feelings of doubt that had previously emerged from my gut
+immediately turned into blind rage. I slammed shut my laptop
+and went outside to vent my frustation by way of 10k running, but although
 that might've been enough to release my anger, I could not find
 the motivation to deal with that issue for another 3 weeks. 
 
 Germany is in lock-down since the Coronavirus (COVID-19) is
-currently shaking the world.
-
-With this repository I used some of my lock-in time productively
+currently shaking the world. With this repository 
+I used some of my lock-in time productively
 to solve the issue for all owners of a `Fujitsu ScanSnap S1300`.
 
 **Don't buy a new scanner just because FUJITSU discontinued
