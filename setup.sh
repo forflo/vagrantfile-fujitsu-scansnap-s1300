@@ -2,7 +2,7 @@
 
 HOMEBREW_INSTALLED="$(which brew)"
 
-[ "$HOMEBREW_INSTALLED" != "" ] && {
+[ "$HOMEBREW_INSTALLED" == "" ] && {
     echo "Homebrew in not installed"
     echo "This script relies on the 'brew' command"
     exit 1
