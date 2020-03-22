@@ -1,0 +1,1 @@
+ATTRS{manufacturer}=="FUJITSU", DRIVERS=="usb", SUBSYSTEMS=="usb", ATTRS{idVendor}=="04c5", ATTRS{idProduct}=="*", MODE="0777"
