@@ -26,3 +26,4 @@ brew cask upgrade virtualbox-extension-pack \
     || brew cask install virtualbox-extension-pack
 
 vagrant up
+vagrant halt && vagrant up
