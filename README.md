@@ -84,7 +84,7 @@ their support for that product line**
 - Open a Terminal and use `cd` to change into it.
 - Run `./setup`
 - Connect you Fujitsu ScanSnap S1300 via USB
-- Run `vagrant ssh "scanimage -p --format=png > /vagrant/out.png"`
+- Run `vagrant ssh -c "scanimage -p --format=png > /vagrant/out.png"`
 - Thank me later
 
 ### Acknowledgements
