@@ -71,3 +71,14 @@ their support for that product line**
 - Connect you Fujitsu ScanSnap S1300 via USB
 - Run `vagrant ssh "scanimage -p --format=png > /vagrant/out.png"
 - Thank me later
+
+## Acknowledgements
+
+I could not have thrown together this repository if it had not been
+for these folks:
+
+- [Josh Archer](https://www.josharcher.uk/code/install-scansnap-s1300-drivers-linux/)
+- [Leo Gaggl](https://www.gaggl.com/2016/11/getting-fujitsu-scansnap-s1300i-to-work-on-ubuntu-16-04lts/)
+- [internet stranger](https://ubuntuforums.org/archive/index.php/t-2393597.html)
+
+Thanks!
