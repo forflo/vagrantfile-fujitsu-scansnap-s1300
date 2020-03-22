@@ -1,5 +1,10 @@
 # Vagrantfile for bringing your old ScanSnap S1300 (not s1300i) back to life.
 
+TL;DR: Fujitsu discontinued software support for Mac OS X. Starting with
+OS X Catalina, ScanSnap Manager ceases to work on OS X. The Vagrantfile
+in this repository automatically creates a environment that you can use
+to continue scanning with your `Fujitsu ScanSnap S1300`!
+
 
 A couple of days ago I went to my mailbox and fetched another
 pile of letters, bills, and documents. I did what I'd usually do, that is
@@ -37,7 +42,13 @@ of that product line down, locking them to old versions of OS X!".
 
 I was wrong.
 
-Sadly, this was exactly what had happened as following [webpage](https://www.fujitsu.com/global/support/products/computing/peripheral/scanners/scansnap/faq/s1300-catalina.html) and this ![screenshot](screenshot) proves.
+Sadly, this was exactly what had happened as following 
+[webpage](https://www.fujitsu.com/global/support/products/computing/peripheral/scanners/scansnap/faq/s1300-catalina.html) 
+and this screenshot
+
+![screenshot](screenshot.png) 
+
+proves.
 
 The feelings of doubt that had previously emerged from my gu
 immediately turned into blind rage. I slammed down my computer
