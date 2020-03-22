@@ -40,12 +40,17 @@ Something was odd.
 
 I could not find a driver package for S1300 anymore; only for S1300i (note the "i") was available.
 I ignored the feelings of doubt emerging from my gut and continued
-to install the software for S1300i. "Eh, it's just the same scanner with
-some extras, that's why it only differs in the i", I thought. And further:
-"It gotta work, the good folks from Fujitsu will have let all users
-of that product line down, locking them to old versions of OS X!".
+to install the software for S1300i. 
 
-I was wrong. Sadly, this was exactly what had happened as following 
+> Eh, it's just the same scanner with
+> some extras, that's why it only differs in the i
+
+I thought. And further:
+
+> It gotta work, the good folks from Fujitsu will have let all users
+> of that product line down, locking them to old versions of OS X!.
+
+I was so wrong. Sadly, this was exactly what had happened as following 
 [webpage](https://www.fujitsu.com/global/support/products/computing/peripheral/scanners/scansnap/faq/s1300-catalina.html) 
 and this screenshot
 
