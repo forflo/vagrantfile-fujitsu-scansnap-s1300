@@ -1,3 +1,5 @@
+# source this in your ~/.profile
+
 function sl-con-scanner() {
     local scanner_vagrant="$HOME/vagrants/scanner_ubuntu_18.04"
     [ "$#" -gt 0 ] && {
