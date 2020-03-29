@@ -3,7 +3,13 @@ $provision = <<-SCRIPT
   sudo apt-get install -y \
 	libsane-extras \
 	sane \
-	sane-utils
+	sane-utils \
+    tesseract-ocr \
+    tesseract-ocr-{jpn,deu} \
+    inotify-tools \
+    parallel
+    
+  # sudo apt-get install -y tesseract-ocr-all
 
   echo "[Vagrantfile] 1300_0C26.nal"
   sudo mkdir -p /usr/share/sane/epjitsu/

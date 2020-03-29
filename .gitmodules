@@ -1,0 +1,3 @@
+[submodule "pmOCR"]
+	path = pmOCR
+	url = https://github.com/deajan/pmOCR.git
