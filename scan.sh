@@ -61,6 +61,8 @@ raw_file_name="$filename.$format"
 raw_scan_file="$destination_dir/$raw_file_name"
 ocr_pdf_file="$destination_dir_ocr"/$filename
 
+mkdir -p "$destination_dir_ocr" "$destination_dir"
+
 echo [scanimage] --resolution "$resolution" \
     -p --brightness=0 \
     --threshold=170 --mode="$mode" \
