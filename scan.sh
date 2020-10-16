@@ -16,6 +16,7 @@ format="png"
 resolution="300dpi"
 mode="gray"
 ocr_lang="deu+eng"
+do_ocr="true"
 
 # DIN A4
 page_width="210"
@@ -32,6 +33,10 @@ while [ "${1:-}" != "" ]; do
     "--filename")
         shift
         filename="${1}"
+        ;;
+    "--no-ocr")
+        shift
+        do_ocr="false"
         ;;
     "--resolution")
         shift
@@ -79,8 +84,11 @@ scanimage --resolution "$resolution" -p --brightness=0 \
 echo cp "$raw_scan_file" "$destination_dir_ocr/$raw_file_name"
 cp "$raw_scan_file" "$destination_dir_ocr/$raw_file_name"
 
-echo tesseract -l "$ocr_lang" "$raw_scan_file" "$ocr_pdf_file" pdf
-tesseract -l "$ocr_lang" "$raw_scan_file" "$ocr_pdf_file" pdf
+if [ "$do_ocr" == "true" ]; then
+    echo tesseract -l "$ocr_lang" "$raw_scan_file" "$ocr_pdf_file" pdf
+    tesseract -l "$ocr_lang" "$raw_scan_file" "$ocr_pdf_file" pdf
+fi
+
 
 echo rm "$destination_dir_ocr/$raw_file_name"
 rm "$destination_dir_ocr/$raw_file_name"
