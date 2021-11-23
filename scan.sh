@@ -60,35 +60,46 @@ done
 
 filename="${filename}_${today_str}"
 
-destination_dir="/vagrant/scanout_raw"
+destination_dir_raw="/vagrant/scanout_raw"
 destination_dir_ocr="/vagrant/scanout_pdf"
-raw_file_name="$filename.$format"
-raw_scan_file="$destination_dir/$raw_file_name"
-ocr_pdf_file="$destination_dir_ocr"/$filename
+raw_file_name_front="${filename}_1.$format"
+raw_file_name_back="${filename}_2.$format"
 
-mkdir -p "$destination_dir_ocr" "$destination_dir"
+ocr_pdf_file_name_front="${filename}_1"
+ocr_pdf_file_name_back="${filename}_2"
 
-echo [scanimage] --resolution "$resolution" \
-    -p --brightness=0 \
-    --threshold=170 --mode="$mode" \
-    "$@" --format="$format" \
-    \> "$raw_scan_file"
+mkdir -p "$destination_dir_ocr" "$destination_dir_raw"
 
-scanimage --resolution "$resolution" -p --brightness=0 \
-    --page-width="$page_width" --page-height="$page_height" \
-	--threshold=170 --mode="$mode" \
-    "$@" --format="$format" \
-	> "$raw_scan_file"
- 
-# copy over in order to tesseract ocr the image
-echo cp "$raw_scan_file" "$destination_dir_ocr/$raw_file_name"
-cp "$raw_scan_file" "$destination_dir_ocr/$raw_file_name"
+function do_scan() (
+    cd
+    scanimage --resolution "$resolution" -p --brightness=0 \
+              --batch="${filename}_%d.$format" \
+              -d 'epjitsu:libusb:001:002' \
+              --page-width="$page_width" \
+              --page-height="$page_height" \
+              --source="ADF Duplex" \
+              --threshold=170 --mode="$mode" \
+              "$@" --format="$format" || return 1
 
-if [ "$do_ocr" == "true" ]; then
-    echo tesseract -l "$ocr_lang" "$raw_scan_file" "$ocr_pdf_file" pdf
-    tesseract -l "$ocr_lang" "$raw_scan_file" "$ocr_pdf_file" pdf
-fi
+    mv "$raw_file_name_front" "$destination_dir_raw"
+    mv "$raw_file_name_back" "$destination_dir_raw"
 
+    return 0
+)
 
-echo rm "$destination_dir_ocr/$raw_file_name"
-rm "$destination_dir_ocr/$raw_file_name"
+function do_ocr() (
+    cd "$destination_dir_raw"
+
+    if [ "$do_ocr" == "true" ]; then
+        tesseract -l "$ocr_lang" "$raw_file_name_front" "$destination_dir_ocr/$ocr_pdf_file_name_front" pdf || return 1
+        tesseract -l "$ocr_lang" "$raw_file_name_back" "$destination_dir_ocr/$ocr_pdf_file_name_back" pdf || return 1
+    fi
+
+    return 0
+)
+
+do_scan || exit 1
+do_ocr || exit 1
+
+# echo rm "$destination_dir_ocr/$raw_file_name"
+# rm "$destination_dir_ocr/$raw_file_name"
