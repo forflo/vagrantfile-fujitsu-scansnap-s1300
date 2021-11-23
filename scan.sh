@@ -72,6 +72,8 @@ mkdir -p "$destination_dir_ocr" "$destination_dir_raw"
 
 function do_scan() (
     cd
+    rm -f *."$format"
+    rm -f *.pdf
     scanimage --resolution "$resolution" -p --brightness=0 \
               --batch="${filename}_%d.$format" \
               -d 'epjitsu:libusb:001:002' \
@@ -81,25 +83,25 @@ function do_scan() (
               --threshold=170 --mode="$mode" \
               "$@" --format="$format" || return 1
 
-    mv "$raw_file_name_front" "$destination_dir_raw"
-    mv "$raw_file_name_back" "$destination_dir_raw"
+    local count=1
+    for i in "${filename}_"*."$format"; do
+        if [ "$do_ocr" == "true" ]; then
+            echo Start tesseract job $count with file $i
+            tesseract -l "$ocr_lang" "$i" "$destination_dir_ocr/${filename}_$count" pdf
+        fi
+        ((count++))
+    done
+    wait
+
+    for i in "${filename}_"*."$format"; do
+        mv "$i" "$destination_dir_raw"
+    done
 
     return 0
 )
 
-function do_ocr() (
-    cd "$destination_dir_raw"
-
-    if [ "$do_ocr" == "true" ]; then
-        tesseract -l "$ocr_lang" "$raw_file_name_front" "$destination_dir_ocr/$ocr_pdf_file_name_front" pdf || return 1
-        tesseract -l "$ocr_lang" "$raw_file_name_back" "$destination_dir_ocr/$ocr_pdf_file_name_back" pdf || return 1
-    fi
-
-    return 0
-)
 
 do_scan || exit 1
-do_ocr || exit 1
 
 # echo rm "$destination_dir_ocr/$raw_file_name"
 # rm "$destination_dir_ocr/$raw_file_name"
